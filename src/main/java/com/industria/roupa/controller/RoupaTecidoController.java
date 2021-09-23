@@ -1,12 +1,8 @@
 package com.industria.roupa.controller;
 
 import com.industria.roupa.Mensagem;
-import com.industria.roupa.biz.RoupaBiz;
 import com.industria.roupa.biz.RoupaTecidoBiz;
-import com.industria.roupa.biz.VendaBiz;
-import com.industria.roupa.entities.Roupa;
 import com.industria.roupa.entities.RoupaTecido;
-import com.industria.roupa.entities.Venda;
 import com.industria.roupa.repositories.RoupaRepository;
 import com.industria.roupa.repositories.RoupaTecidoRepository;
 import com.industria.roupa.repositories.TecidoRepository;
