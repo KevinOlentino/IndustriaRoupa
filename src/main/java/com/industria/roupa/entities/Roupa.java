@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name="Roupa")
+@Table(name="roupa")
 public class Roupa {
 
     @Id
@@ -16,7 +16,7 @@ public class Roupa {
     private String nome;
 
     @Column(name = "Preco")
-    @Pattern(regexp = "[30-90 ]{5,50}", message = "O nome é invalido!")
+    @Pattern(regexp = "[30-90]", message = "O preço deve ser entre 30 á 90")
     private double preco;
 
     @Column(name = "Medida")
