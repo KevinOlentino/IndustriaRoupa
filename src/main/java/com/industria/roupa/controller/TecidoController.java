@@ -1,9 +1,7 @@
 package com.industria.roupa.controller;
 
 import com.industria.roupa.Mensagem;
-import com.industria.roupa.biz.RoupaBiz;
 import com.industria.roupa.biz.TecidoBiz;
-import com.industria.roupa.entities.Roupa;
 import com.industria.roupa.entities.Tecido;
 import com.industria.roupa.repositories.TecidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
