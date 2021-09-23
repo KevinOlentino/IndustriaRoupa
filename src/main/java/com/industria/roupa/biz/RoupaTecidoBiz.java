@@ -20,11 +20,11 @@ public class RoupaTecidoBiz {
 
 		boolean result = true;
 		if (roupaRepository.existsById(roupaTecido.getIdRoupa())) {
-			msg.mensagens.add("Este atleta não existe");
+			msg.mensagens.add("Esta roupa não existe");
 			result = false;
 		}
 		if (tecidoRepository.existsById(roupaTecido.getIdTecido())) {
-			msg.mensagens.add("Esta modalidade não existe");
+			msg.mensagens.add("Este tecido não existe");
 			result = false;
 		}
 
