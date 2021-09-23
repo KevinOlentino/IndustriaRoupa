@@ -22,4 +22,35 @@ public class Tecido {
     @Column(name = "Medida")
     private double medida;
 
+    public int getIdtecido() {
+        return idtecido;
+    }
+
+    public void setIdtecido(int idtecido) {
+        this.idtecido = idtecido;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getMedida() {
+        return medida;
+    }
+
+    public void setMedida(double medida) {
+        this.medida = medida;
+    }
 }
