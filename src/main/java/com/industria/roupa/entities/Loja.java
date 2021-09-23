@@ -26,7 +26,7 @@ public class Loja {
     @Column(name = "credito")
     @Max(50)
     @Pattern(regexp = "[A-z ]{5,50}")
-    private String Credito;
+    private Double Credito;
 
     public int getIdloja() {
 		return idloja;
@@ -44,11 +44,11 @@ public class Loja {
 		Nome = nome;
 	}
 
-	public String getCredito() {
+	public Double getCredito() {
 		return Credito;
 	}
 
-	public void setCredito(String credito) {
+	public void setCredito(Double credito) {
 		Credito = credito;
 	}
 
