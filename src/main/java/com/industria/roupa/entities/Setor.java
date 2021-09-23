@@ -1,7 +1,5 @@
 package com.industria.roupa.entities;
-
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Pattern;
 
 @Entity

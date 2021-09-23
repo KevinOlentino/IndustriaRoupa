@@ -4,7 +4,6 @@ import com.industria.roupa.Mensagem;
 import com.industria.roupa.biz.RoupaBiz;
 import com.industria.roupa.entities.Roupa;
 import com.industria.roupa.repositories.RoupaRepository;
-import org.apache.coyote.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
