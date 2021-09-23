@@ -12,7 +12,7 @@ public class RoupaBiz {
 
     public RoupaBiz() {msg = new Mensagem();}
 
-    public boolean Roupeiro(@Valid Roupa roupa){
+    public boolean Validade(@Valid Roupa roupa){
 
         boolean result = true;
         msg = new Mensagem();

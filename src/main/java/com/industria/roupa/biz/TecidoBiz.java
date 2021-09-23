@@ -10,7 +10,7 @@ public class TecidoBiz {
 
     public TecidoBiz() {msg = new Mensagem();}
 
-    public boolean Roupeiro(@Valid Tecido tecido){
+    public boolean Validade(@Valid Tecido tecido){
 
         boolean result = true;
         msg = new Mensagem();

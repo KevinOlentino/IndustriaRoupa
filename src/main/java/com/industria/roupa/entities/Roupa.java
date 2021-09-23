@@ -9,18 +9,18 @@ public class Roupa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idRoupa")
+    @Column(name = "idroupa")
     private int idroupa;
 
-    @Column(name = "Nome", nullable = false, length = 50)
+    @Column(name = "nome", nullable = false, length = 50)
     @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
-    @Column(name = "Preco",precision = 12,scale = 2)
+    @Column(name = "preco",precision = 12,scale = 2)
     @Pattern(regexp = "[30-90]", message = "O preço deve ser entre 30 á 90")
     private double preco;
 
-    @Column(name = "Medida")
+    @Column(name = "medida")
     private double medida;
 
     public int getIdroupa() {
