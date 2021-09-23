@@ -23,9 +23,7 @@ public class Loja {
     @Pattern(regexp = "[A-z ]{5,50}")
     private String Nome;
     
-    @Column(name = "credito")
-    @Max(50)
-    @Pattern(regexp = "[A-z ]{5,50}")
+    @Column(name = "credito", precision = 16, scale = 2)
     private Double Credito;
 
     public int getIdloja() {
