@@ -21,11 +21,11 @@ public class RoupaTecidoBiz {
 	public Boolean Validade(RoupaTecido roupaTecido) {
 
 		boolean result = true;
-		if (roupaRepository.existsById(roupaTecido.getIdRoupa())) {
+		if (!roupaRepository.existsById(roupaTecido.getIdRoupa())) {
 			msg.mensagens.add("Esta roupa não existe");
 			result = false;
 		}
-		if (tecidoRepository.existsById(roupaTecido.getIdTecido())) {
+		if (!tecidoRepository.existsById(roupaTecido.getIdTecido())) {
 			msg.mensagens.add("Este tecido não existe");
 			result = false;
 		}
