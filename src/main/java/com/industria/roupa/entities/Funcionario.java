@@ -1,5 +1,7 @@
 package com.industria.roupa.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,7 +41,10 @@ public class Funcionario {
 	
 	@Column(name="idfuncao", nullable = false, precision=11)
 	private int idFuncao;
-
+	
+	@Column(name="datadecontratacao", nullable = false, precision=11, scale=0)
+	private Date datadeContratacao;
+	
 	public int getId() {
 		return id;
 	}
@@ -95,6 +100,15 @@ public class Funcionario {
 	public void setIdFuncao(Integer idFuncao) {
 		this.idFuncao = idFuncao;
 	}
+
+	public Date getDatadeContratacao() {
+		return datadeContratacao;
+	}
+
+	public void setDatadeContratacao(Date datadeContratacao) {
+		this.datadeContratacao = datadeContratacao;
+	}
+	
 	
     
 }

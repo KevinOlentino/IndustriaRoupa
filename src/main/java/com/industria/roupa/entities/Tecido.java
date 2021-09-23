@@ -11,8 +11,9 @@ public class Tecido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idTecido")
     private int idtecido;
-
+    
     @Column(name = "Nome", nullable = false, length = 50)
+    @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
     @Column(name = "Preco")
