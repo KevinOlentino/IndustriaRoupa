@@ -9,10 +9,15 @@ public class SetorBiz {
 
     public SetorRepository setorRepository;
 
+    public SetorBiz(SetorRepository setorRepository){
+        this.setorRepository = setorRepository;
+        msg = new Mensagem();
+    }
+
     public boolean Validade(Setor setor) {
 
         boolean result = true;
-        
+
         if (!setorRepository.findByName(setor.getNome()).isEmpty()){
             msg.mensagens.add("Esse setor já foi adicionado.");
             result = false;
