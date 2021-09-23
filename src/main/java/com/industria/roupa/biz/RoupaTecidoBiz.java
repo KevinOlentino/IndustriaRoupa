@@ -14,6 +14,8 @@ public class RoupaTecidoBiz {
 
 	public RoupaTecidoBiz(RoupaRepository roupaRepository, TecidoRepository tecidoRepository) {
 		msg = new Mensagem();
+		this.roupaRepository = roupaRepository;
+		this.tecidoRepository = tecidoRepository;
 	}
 
 	public Boolean Validade(RoupaTecido roupaTecido) {
@@ -31,4 +33,5 @@ public class RoupaTecidoBiz {
 		return result;
 
 	}
+	
 }
