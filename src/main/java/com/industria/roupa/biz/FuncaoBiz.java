@@ -13,7 +13,7 @@ public class FuncaoBiz {
         msg = new Mensagem();
     }
 
-    public Boolean Leiloada(@Valid Funcao funcao) {
+    public Boolean Funcao(@Valid Funcao funcao) {
 
         Boolean result = true;
         msg = new Mensagem();
