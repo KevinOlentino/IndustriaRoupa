@@ -10,8 +10,8 @@ public class SetorBiz {
     public SetorRepository setorRepository;
 
     public SetorBiz(SetorRepository setorRepository){
-        this.setorRepository = setorRepository;
         msg = new Mensagem();
+        this.setorRepository = setorRepository;
     }
 
     public boolean Validade(Setor setor) {

@@ -13,8 +13,7 @@ public class Setor {
     @Column(name = "idsetor")
     private int idSetor;
 
-    @Column(name = "nome")
-    @Max(50)
+    @Column(name = "nome", nullable = false, length = 50)
     @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
