@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface SetorRepository extends JpaRepository<Setor,Integer> {
-    List<Setor> findByName(String name);
+    List<Setor> findByNome(String nome);
 }

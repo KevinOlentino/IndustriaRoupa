@@ -13,6 +13,7 @@ public class Roupa {
     private int idroupa;
 
     @Column(name = "Nome", nullable = false, length = 50)
+    @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
     @Column(name = "Preco")
