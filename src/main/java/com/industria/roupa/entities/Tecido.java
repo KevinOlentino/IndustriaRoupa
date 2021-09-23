@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name="Tecido")
+@Table(name="tecido")
 public class Tecido {
 
     @Id
