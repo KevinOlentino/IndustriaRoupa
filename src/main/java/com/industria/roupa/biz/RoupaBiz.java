@@ -1,10 +1,6 @@
 package com.industria.roupa.biz;
 
-<<<<<<< HEAD
-public class RoupaBiz {
 
-}
-=======
 import com.industria.roupa.Mensagem;
 import com.industria.roupa.entities.Roupa;
 
@@ -38,4 +34,3 @@ public class RoupaBiz {
 
     }
 
->>>>>>> 702c833622e9c865f0d94c39ea66c69b69935db6
