@@ -14,48 +14,49 @@ public class Venda {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="idvenda")
-	private Integer idVenda;
+	private int idVenda;
 	
 	@Column(name="idfuncionario", nullable = false)	
-	private Integer idFuncionario;
+	private int idFuncionario;
 		
 	@Column(name="idloja", nullable = false)
-	private Integer idLoja;	
+	private int idLoja;	
 
 	@Column(name="idroupa", nullable = false)
-	private Integer idRoupa;
+	private int idRoupa;
 
-	public Integer getIdVenda() {
+	public int getIdVenda() {
 		return idVenda;
 	}
 
-	public void setIdVenda(Integer idVenda) {
+	public void setIdVenda(int idVenda) {
 		this.idVenda = idVenda;
 	}
 
-	public Integer getIdFuncionario() {
+	public int getIdFuncionario() {
 		return idFuncionario;
 	}
 
-	public void setIdFuncionario(Integer idFuncionario) {
+	public void setIdFuncionario(int idFuncionario) {
 		this.idFuncionario = idFuncionario;
 	}
 
-	public Integer getIdLoja() {
+	public int getIdLoja() {
 		return idLoja;
 	}
 
-	public void setIdLoja(Integer idLoja) {
+	public void setIdLoja(int idLoja) {
 		this.idLoja = idLoja;
 	}
 
-	public Integer getIdRoupa() {
+	public int getIdRoupa() {
 		return idRoupa;
 	}
 
-	public void setIdRoupa(Integer idRoupa) {
+	public void setIdRoupa(int idRoupa) {
 		this.idRoupa = idRoupa;
 	}
-		
+
+	
 }
 
