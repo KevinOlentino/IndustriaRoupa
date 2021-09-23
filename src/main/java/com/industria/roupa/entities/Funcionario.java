@@ -17,11 +17,11 @@ public class Funcionario {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private int id;
+	@Column(name="idfuncionario")
+	private int idfuncionario;
 	
 	@Column(name="nome", nullable = false, length = 50)
-	@Pattern(regexp="[A-z]{10,50}", message="O nome é inválido!")
+	@Pattern(regexp="[A-z ]{3,50}", message="O nome é inválido!")
 	private String nome;
 	
 	@Column(name="cpf", nullable= false, length = 14)
@@ -32,7 +32,7 @@ public class Funcionario {
 	private int idSetor;
 	
 	@Column(name="email", nullable = false, length = 50)
-	@Pattern(regexp="^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?/i", message="O Email é inválido!")
+	//@Pattern(regexp="^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?/i", message="O Email é inválido!")
 	private String email;
 	
 	@Min(value=1100, message="O valor não pode ser abaixo do salario minimo.")
@@ -45,12 +45,12 @@ public class Funcionario {
 	@Column(name="datadecontratacao", nullable = false, precision=11, scale=0)
 	private Date datadeContratacao;
 	
-	public int getId() {
-		return id;
+	public int getIdfuncionario() {
+		return idfuncionario;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdFuncionario(Integer idfuncionario) {
+		this.idfuncionario = idfuncionario;
 	}
 
 	public String getNome() {

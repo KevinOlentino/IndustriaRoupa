@@ -45,7 +45,7 @@ public class FuncionarioController {
 	    @RequestMapping("incluir")
 	    public Mensagem add(@RequestBody Funcionario funcionario) throws ParseException {
 	    	FuncionarioBiz funcionarioBiz = new FuncionarioBiz( setorRepository,  funcaoRepository);
-	        funcionario.setId(0);
+	        funcionario.setIdFuncionario(0);
 
 	        try {
 
