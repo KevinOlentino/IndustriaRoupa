@@ -13,7 +13,7 @@ public class FuncaoBiz {
         msg = new Mensagem();
     }
 
-    public Boolean Funcao(@Valid Funcao funcao) {
+    public Boolean Validade(@Valid Funcao funcao) {
 
         Boolean result = true;
         msg = new Mensagem();
