@@ -17,7 +17,6 @@ public class Roupa {
     private String nome;
 
     @Column(name = "preco",precision = 12,scale = 2)
-    @Pattern(regexp = "[30-90]", message = "O preço deve ser entre 30 á 90")
     private double preco;
 
     @Column(name = "medida")
