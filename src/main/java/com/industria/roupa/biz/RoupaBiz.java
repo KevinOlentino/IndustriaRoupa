@@ -20,8 +20,8 @@ public class RoupaBiz {
             msg.mensagens.add("o nome não pode ser vazio");
             result = false;
         }
-            if(roupa.getNome().length() > 50){
-                msg.mensagens.add("O numero de caracteres não pode ser vazio");
+            if(roupa.getNome().length() < 5 && roupa.getNome().length() > 50){
+                msg.mensagens.add("O nome não pode ser menor que 5 letras e maior que 50 letras");
                 result = false;
             }
             if(roupa.getPreco() < 30 && roupa.getPreco()> 90) {
