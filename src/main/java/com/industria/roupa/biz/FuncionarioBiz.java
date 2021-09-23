@@ -1,9 +1,7 @@
 package com.industria.roupa.biz;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import com.industria.roupa.Mensagem;
 import com.industria.roupa.entities.Funcionario;
 import com.industria.roupa.repositories.FuncaoRepository;
@@ -45,6 +43,11 @@ public class FuncionarioBiz {
 		
 		if (setorRepository.findById( funcionario.getIdSetor() ).isEmpty()) {
 			msg.mensagens.add( "O setor escolhido não é válido");
+			result = false;
+		}
+		
+		if (funcaoRepository.findById( funcionario.getIdFuncao() ).isEmpty()) {
+			msg.mensagens.add( "A funcao escolhida não é válida");
 			result = false;
 		}
 		
