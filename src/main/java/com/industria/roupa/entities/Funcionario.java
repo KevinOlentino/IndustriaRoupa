@@ -16,7 +16,7 @@ public class Funcionario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private Integer id;
+	private int id;
 	
 	@Column(name="nome", nullable = false, length = 50)
 	@Pattern(regexp="[A-z]{10,50}", message="O nome é inválido!")
@@ -27,7 +27,7 @@ public class Funcionario {
 	private String cpf;
 	
 	@Column(name="idsetor", nullable = false, precision=11, scale=0)
-	private Integer idSetor;
+	private int idSetor;
 	
 	@Column(name="email", nullable = false, length = 50)
 	@Pattern(regexp="[A-z]{10,50}", message="O Email é inválido!")
@@ -38,9 +38,9 @@ public class Funcionario {
 	private Double salario;
 	
 	@Column(name="idfuncao", nullable = false, precision=11, scale=0)
-	private Integer idFuncao;
+	private int idFuncao;
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -64,7 +64,7 @@ public class Funcionario {
 		this.cpf = cpf;
 	}
 
-	public Integer getIdSetor() {
+	public int getIdSetor() {
 		return idSetor;
 	}
 
@@ -88,7 +88,7 @@ public class Funcionario {
 		this.salario = salario;
 	}
 
-	public Integer getIdFuncao() {
+	public int getIdFuncao() {
 		return idFuncao;
 	}
 
