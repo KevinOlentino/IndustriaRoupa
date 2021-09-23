@@ -16,7 +16,7 @@ public class Roupa {
     @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
-    @Column(name = "Preco")
+    @Column(name = "Preco",precision = 12,scale = 2)
     @Pattern(regexp = "[30-90]", message = "O preço deve ser entre 30 á 90")
     private double preco;
 
