@@ -2,24 +2,29 @@ package com.industria.roupa.biz;
 
 import com.industria.roupa.Mensagem;
 import com.industria.roupa.entities.Loja;
+import com.industria.roupa.repositories.LojaRepository;
 
 public class LojaBiz {
+	
+	public Mensagem msg;
 
-    public Mensagem msg;
+	private LojaRepository lojaRepository;
 
-    public LojaBiz(){
-        msg = new Mensagem();
-    }
+	public LojaBiz(LojaRepository lojaRepository) {
+		msg = new Mensagem();
+	}
 
-    public boolean Validade(Loja loja){
-        boolean result = true;
+	public Boolean Validade(Loja loja) {
 
-        if(loja.getCredito() < 10000){
-            msg.mensagens.add("O credito não pode ser inferior a R$10.000");
-            result = false;
-        }
+		boolean result = true;
+		if (lojaRepository.existsById(loja.getIdloja())) {
+			msg.mensagens.add("O nome da Loja não existe");
+			result = false;
+		}
+		
+		return result;
+	
+	
 
-        return result;
-    }
-
+	}
 }

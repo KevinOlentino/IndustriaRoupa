@@ -18,7 +18,7 @@ public class SetorBiz {
 
         boolean result = true;
 
-        if (!setorRepository.findByName(setor.getNome()).isEmpty()){
+        if (!setorRepository.findByNome(setor.getNome()).isEmpty()){
             msg.mensagens.add("Esse setor já foi adicionado.");
             result = false;
         }

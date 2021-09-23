@@ -28,18 +28,18 @@ public class Funcionario {
 	@Pattern(regexp="^\\d{3}.?\\d{3}.?\\d{3}-?\\d{2}$", message="CPF inválido")
 	private String cpf;
 	
-	@Column(name="idsetor", nullable = false, precision=11, scale=0)
+	@Column(name="idsetor", nullable = false, precision=11)
 	private int idSetor;
 	
 	@Column(name="email", nullable = false, length = 50)
-	@Pattern(regexp="[A-z]{10,50}", message="O Email é inválido!")
+	@Pattern(regexp="^[a-z0-9.]+@[a-z0-9]+\\.[a-z]+\\.([a-z]+)?/i", message="O Email é inválido!")
 	private String email;
 	
-	@Min(value=1100, message="O valor não pode ser abaixo do minimo.")
+	@Min(value=1100, message="O valor não pode ser abaixo do salario minimo.")
 	@Column(name="salario", nullable = false, precision=16, scale=2)
 	private Double salario;
 	
-	@Column(name="idfuncao", nullable = false, precision=11, scale=0)
+	@Column(name="idfuncao", nullable = false, precision=11)
 	private int idFuncao;
 	
 	@Column(name="datadecontratacao", nullable = false, precision=11, scale=0)
