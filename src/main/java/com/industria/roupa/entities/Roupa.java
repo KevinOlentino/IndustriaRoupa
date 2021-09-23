@@ -13,6 +13,7 @@ public class Roupa {
     private int idroupa;
 
     @Column(name = "Nome", nullable = false, length = 50)
+    @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
     @Column(name = "Preco")
@@ -21,4 +22,36 @@ public class Roupa {
 
     @Column(name = "Medida")
     private double medida;
+
+    public int getIdroupa() {
+        return idroupa;
+    }
+
+    public void setIdroupa(int idroupa) {
+        this.idroupa = idroupa;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public double getMedida() {
+        return medida;
+    }
+
+    public void setMedida(double medida) {
+        this.medida = medida;
+    }
 }
