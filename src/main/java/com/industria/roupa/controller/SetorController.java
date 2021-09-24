@@ -3,6 +3,7 @@ package com.industria.roupa.controller;
 import java.util.List;
 import javax.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ import com.industria.roupa.repositories.SetorRepository;
 
 @RestController
 @RequestMapping("setor")
+@CrossOrigin("http://localhost:4200/")
 public class SetorController {
 	
 	@Autowired
