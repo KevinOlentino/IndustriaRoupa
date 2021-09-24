@@ -56,6 +56,8 @@ public class VendaController {
             return vendaBiz.msg;
         }
 
+        vendaBiz.msg.mensagens.add("OK");
+
         return vendaBiz.msg;
 
 

@@ -48,6 +48,8 @@ public class SetorController {
             return setorBiz.msg;
         }
 
+        setorBiz.msg.mensagens.add("OK");
+
         return setorBiz.msg;
     }
 	

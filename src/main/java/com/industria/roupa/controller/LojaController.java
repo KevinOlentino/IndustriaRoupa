@@ -52,6 +52,8 @@ public class LojaController {
 	            return lojaBiz.msg;
 	        }
 
+			lojaBiz.msg.mensagens.add("OK");
+
 	        return lojaBiz.msg;
 
 

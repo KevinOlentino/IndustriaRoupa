@@ -47,6 +47,8 @@ public class FuncaoController {
 	            return funcaoBiz.msg;
 	        }
 
+			funcaoBiz.msg.mensagens.add("OK");
+
 	        return funcaoBiz.msg;
 
 

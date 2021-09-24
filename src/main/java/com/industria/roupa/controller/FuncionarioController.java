@@ -60,6 +60,8 @@ public class FuncionarioController {
 	            return funcionarioBiz.msg;
 	        }
 
+			funcionarioBiz.msg.mensagens.add("OK");
+
 	        return funcionarioBiz.msg;
 
 
