@@ -19,7 +19,7 @@ import com.industria.roupa.repositories.LojaRepository;
 
 
 @RestController
-@RequestMapping("Loja")
+@RequestMapping("loja")
 @CrossOrigin("http://localhost:4200/")
 public class LojaController {
 	
