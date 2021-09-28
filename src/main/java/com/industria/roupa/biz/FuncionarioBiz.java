@@ -61,10 +61,10 @@ public class FuncionarioBiz {
 			result = false;
 		}
 		
-		if (funcionario.getDatadeContratacao().before(date)) {
-			msg.mensagens.add("A data de contratacao esta inferior a data minima permitida");
-			result = false;
-		}
+		//if (funcionario.getDatadeContratacao().before(date)) {
+			//msg.mensagens.add("A data de contratacao esta inferior a data minima permitida");
+			//result = false;
+		//}
 		
 		
 		return result;

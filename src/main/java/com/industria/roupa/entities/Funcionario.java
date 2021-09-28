@@ -42,7 +42,7 @@ public class Funcionario {
 	@Column(name="idfuncao", nullable = false, precision=11)
 	private int idFuncao;
 	
-	@Column(name="datadecontratacao", nullable = false, precision=11, scale=0)
+	@Column(name="datadecontratacao", nullable = false)
 	private Date datadeContratacao;
 	
 	public int getIdfuncionario() {
