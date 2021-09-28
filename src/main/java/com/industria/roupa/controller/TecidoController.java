@@ -14,33 +14,52 @@ import java.util.List;
 @CrossOrigin("http://localhost:4200/")
 public class TecidoController {
 
-    @Autowired
-    private TecidoRepository tecidoRepository;
+	@Autowired
+	private TecidoRepository tecidoRepository;
 
-    @GetMapping("listar")
-    public List<Tecido> listar() {
-        List<Tecido> lista = tecidoRepository.findAll();
-        return lista;
-    }
+	@GetMapping("listar")
+	public List<Tecido> listar() {
+		List<Tecido> lista = tecidoRepository.findAll();
+		return lista;
+	}
 
-    @PostMapping("incluir")
-    public Mensagem salvar(@RequestBody Tecido tecido){
-        tecido.setIdtecido(0);
+	@PostMapping("incluir")
+	public Mensagem incluir(@RequestBody Tecido tecido) {
+		tecido.setIdtecido(0);
+		return salvar(tecido);
 
-        TecidoBiz tecidoBiz = new TecidoBiz();
+	}
 
-        try {
-            if (tecidoBiz.Validade(tecido)) {
-                this.tecidoRepository.save(tecido);
-                this.tecidoRepository.flush();
-            } else {
-                return tecidoBiz.msg;
-            }
-        }catch (ConstraintViolationException e) {
-            e.getConstraintViolations().forEach(v -> tecidoBiz.msg.mensagens.add(v.getMessage()));
-            return tecidoBiz.msg;
-        }
-        tecidoBiz.msg.mensagens.add("OK");
-        return tecidoBiz.msg;
-    }
+	@PostMapping("alterar")
+	public Mensagem alterar(@RequestBody Tecido tecido) {
+		return salvar(tecido);
+
+	}
+	
+	@GetMapping("/{id}")
+	public Tecido consultar(@PathVariable Integer id) {
+		
+		return tecidoRepository.findById(id).get();
+		
+	}
+	
+	
+	
+	public Mensagem salvar(Tecido tecido) {
+		TecidoBiz tecidoBiz = new TecidoBiz();
+
+		try {
+			if (tecidoBiz.Validade(tecido)) {
+				this.tecidoRepository.save(tecido);
+				this.tecidoRepository.flush();
+			} else {
+				return tecidoBiz.msg;
+			}
+		} catch (ConstraintViolationException e) {
+			e.getConstraintViolations().forEach(v -> tecidoBiz.msg.mensagens.add(v.getMessage()));
+			return tecidoBiz.msg;
+		}
+		tecidoBiz.msg.mensagens.add("OK");
+		return tecidoBiz.msg;
+	}
 }
