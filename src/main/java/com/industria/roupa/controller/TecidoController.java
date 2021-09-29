@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("tecido")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin
 public class TecidoController {
 
     @Autowired
@@ -24,9 +24,25 @@ public class TecidoController {
     }
 
     @PostMapping("incluir")
-    public Mensagem salvar(@RequestBody Tecido tecido){
-        tecido.setIdtecido(0);
+    public Mensagem incluir(@RequestBody Tecido tecido){
+    	tecido.setIdtecido(0);
+    	return salvar(tecido);
+    }
+    
+    @PostMapping("alterar")
+    public Mensagem alterar(@RequestBody Tecido tecido){
+       return salvar(tecido);
+    }
 
+    @GetMapping("/{id}")
+    public Tecido consultar(@PathVariable Integer id ) {
+    	
+    	return tecidoRepository.findById(id).get();
+    	
+    }
+    
+    
+    public Mensagem salvar(Tecido tecido){
         TecidoBiz tecidoBiz = new TecidoBiz();
 
         try {
@@ -43,4 +59,5 @@ public class TecidoController {
         tecidoBiz.msg.mensagens.add("OK");
         return tecidoBiz.msg;
     }
+    
 }
