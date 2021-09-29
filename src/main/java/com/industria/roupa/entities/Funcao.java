@@ -19,7 +19,6 @@ public class Funcao {
     private int idFuncao;
 
     @Column(name = "nome")
-    @Max(50)
     @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
