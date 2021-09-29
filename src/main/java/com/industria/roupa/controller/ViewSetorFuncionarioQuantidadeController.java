@@ -12,7 +12,7 @@ import com.industria.roupa.views.ViewSetorFuncionarioQuantidade;
 
 @RestController
 @RequestMapping("viewsetorfuncionarioquantidade")
-//@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("http://localhost:4200/")
 public class ViewSetorFuncionarioQuantidadeController {
 
 	@Autowired
