@@ -17,7 +17,7 @@ public class LojaBiz {
 	public Boolean Validade(Loja loja) {
 
 		boolean result = true;
-		if (lojaRepository.existsById(loja.getIdloja())) {
+		if (loja.getNome().isEmpty()) {
 			msg.mensagens.add("O nome da Loja não existe");
 			result = false;
 		}

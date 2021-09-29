@@ -1,7 +1,9 @@
 package com.industria.roupa.controller;
 
 import com.industria.roupa.Mensagem;
+import com.industria.roupa.biz.SetorBiz;
 import com.industria.roupa.biz.VendaBiz;
+import com.industria.roupa.entities.Setor;
 import com.industria.roupa.entities.Venda;
 import com.industria.roupa.repositories.VendaRepository;
 import com.industria.roupa.repositories.LojaRepository;
@@ -40,19 +42,36 @@ public class VendaController {
 
     @PostMapping
     @RequestMapping("incluir")
-    public Mensagem add(@RequestBody Venda venda) {
-        VendaBiz vendaBiz = new VendaBiz(lojaRepository, roupaRepository, funcionarioRepository);
+    public Mensagem incluir(@RequestBody Venda venda) {
         venda.setIdVenda(0);
+        return add(venda);
+    }
 
-        try {
+    @PostMapping
+    @RequestMapping("alterar")
+    public Mensagem alterar(@RequestBody Venda venda) {
+        return add(venda);
+    }
 
+    @GetMapping
+    @RequestMapping("/{id}")
+    public Venda Consultar(@PathVariable int id){
+        return vendaRepository.findById(id).get();
+    }
+
+
+    public Mensagem add(Venda venda) {
+        VendaBiz vendaBiz = new VendaBiz(lojaRepository,roupaRepository,funcionarioRepository);
+        try
+        {
             if (vendaBiz.Validade(venda)) {
                 this.vendaRepository.save(venda);
                 this.vendaRepository.flush();
             } else {
                 return vendaBiz.msg;
             }
-        }catch (ConstraintViolationException e) {
+        }
+        catch (ConstraintViolationException e) {
             e.getConstraintViolations().forEach(v -> vendaBiz.msg.mensagens.add(v.getMessage()));
             return vendaBiz.msg;
         }
@@ -60,7 +79,6 @@ public class VendaController {
         vendaBiz.msg.mensagens.add("OK");
 
         return vendaBiz.msg;
-
 
     }
 }
