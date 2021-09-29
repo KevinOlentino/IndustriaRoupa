@@ -23,6 +23,10 @@ public class Funcao {
     @Pattern(regexp = "[A-z ]{5,50}")
     private String nome;
 
+    public int getIdFuncao() {
+        return idFuncao;
+    }
+
     public void setIdFuncao(int idFuncao) {
         this.idFuncao = idFuncao;
     }
@@ -35,5 +39,4 @@ public class Funcao {
         this.nome = nome;
 
     }
-
 }

@@ -1,7 +1,9 @@
 package com.industria.roupa.controller;
 
 import com.industria.roupa.Mensagem;
+import com.industria.roupa.biz.RoupaBiz;
 import com.industria.roupa.biz.RoupaTecidoBiz;
+import com.industria.roupa.entities.Roupa;
 import com.industria.roupa.entities.RoupaTecido;
 import com.industria.roupa.repositories.RoupaRepository;
 import com.industria.roupa.repositories.RoupaTecidoRepository;
@@ -35,19 +37,36 @@ public class RoupaTecidoController {
 
     @PostMapping
     @RequestMapping("incluir")
-    public Mensagem add(@RequestBody RoupaTecido roupaTecido) {
-        RoupaTecidoBiz roupaTecidoBiz = new RoupaTecidoBiz(roupaRepository, tecidoRepository);
+    public Mensagem incluir(@RequestBody RoupaTecido roupaTecido) {
         roupaTecido.setIdRoupaTecido(0);
+        return add(roupaTecido);
+    }
 
-        try {
+    @PostMapping
+    @RequestMapping("alterar")
+    public Mensagem alterar(@RequestBody RoupaTecido roupaTecido) {
+        return add(roupaTecido);
+    }
 
+    @GetMapping
+    @RequestMapping("/{id}")
+    public Roupa Consultar(@PathVariable int id){
+        return roupaRepository.findById(id).get();
+    }
+
+
+    public Mensagem add(RoupaTecido roupaTecido) {
+        RoupaTecidoBiz roupaTecidoBiz = new RoupaTecidoBiz(roupaRepository,tecidoRepository);
+        try
+        {
             if (roupaTecidoBiz.Validade(roupaTecido)) {
                 this.roupaTecidoRepository.save(roupaTecido);
                 this.roupaTecidoRepository.flush();
             } else {
                 return roupaTecidoBiz.msg;
             }
-        }catch (ConstraintViolationException e) {
+        }
+        catch (ConstraintViolationException e) {
             e.getConstraintViolations().forEach(v -> roupaTecidoBiz.msg.mensagens.add(v.getMessage()));
             return roupaTecidoBiz.msg;
         }
@@ -55,7 +74,6 @@ public class RoupaTecidoController {
         roupaTecidoBiz.msg.mensagens.add("OK");
 
         return roupaTecidoBiz.msg;
-
 
     }
 }

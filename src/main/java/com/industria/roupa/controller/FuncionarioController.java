@@ -40,7 +40,6 @@ public class FuncionarioController {
     @PostMapping
     @RequestMapping("incluir")
     public Mensagem incluir(@RequestBody Funcionario funcionario) {
-        System.out.println(funcionario.getDatadeContratacao());
         funcionario.setIdFuncionario(0);
         return add(funcionario);
     }
@@ -48,16 +47,13 @@ public class FuncionarioController {
     @PostMapping
     @RequestMapping("alterar")
     public Mensagem alterar(@RequestBody Funcionario funcionario) {
-       // funcionario.getDatadeContratacao().setHours(0);
-        System.out.println(TimeZone.getDefault());
-        System.out.println(funcionario.getDatadeContratacao());
         return add(funcionario);
     }
 
     @GetMapping
-    @RequestMapping("/{idFuncionario}")
-    public Funcionario Consultar(@PathVariable int idFuncionario){
-        return funcionarioRepository.findById(idFuncionario).get();
+    @RequestMapping("/{id}")
+    public Funcionario Consultar(@PathVariable int id){
+        return funcionarioRepository.findById(id).get();
     }
 
 
