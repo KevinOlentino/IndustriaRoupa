@@ -55,7 +55,7 @@ public class VendaController {
 
     @GetMapping
     @RequestMapping("/{id}")
-    public Venda Consultar(@PathVariable int id){
+    public Venda consultar(@PathVariable int id){
         return vendaRepository.findById(id).get();
     }
 
