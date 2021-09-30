@@ -50,8 +50,8 @@ public class RoupaTecidoController {
 
     @GetMapping
     @RequestMapping("/{id}")
-    public Roupa Consultar(@PathVariable int id){
-        return roupaRepository.findById(id).get();
+    public RoupaTecido Consultar(@PathVariable int id){
+        return roupaTecidoRepository.findById(id).get();
     }
 
 
