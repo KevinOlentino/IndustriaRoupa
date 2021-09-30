@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.industria.roupa.controller.FuncaoController;
 import com.industria.roupa.entities.Funcao;
-import com.industria.roupa.entities.RoupaTecido;
 import com.industria.roupa.repositories.FuncaoRepository;
 
 @SpringBootTest
