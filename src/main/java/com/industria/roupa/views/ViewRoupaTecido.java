@@ -3,8 +3,10 @@ package com.industria.roupa.views;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "view_roupa_tecido")
 public class ViewRoupaTecido {
 	
 	@Id
