@@ -19,6 +19,7 @@ import com.industria.roupa.repositories.FuncaoRepository;
 @CrossOrigin("http://localhost:4200/")
 public class FuncaoController {
 
+
 	@Autowired
 	private FuncaoRepository funcaoRepository;
 
