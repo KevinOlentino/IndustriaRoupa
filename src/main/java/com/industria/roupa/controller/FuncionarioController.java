@@ -32,8 +32,9 @@ public class FuncionarioController {
 
     @GetMapping
     @RequestMapping("listar")
-    public List<Funcionario> Get() {
-        return funcionarioRepository.findAll();
+    public List<Funcionario> listar() {
+        List<Funcionario> lista = funcionarioRepository.findAll();
+        return lista;
     }
 
 
