@@ -33,9 +33,13 @@ class SetorControllerTest {
 		setor.setIdSetor(0);
 	    setor.setNome("Recreacao");
 		Integer expected = (int)setorRepository.count()+1;
-		setorController.incluir(setor);
+		Mensagem Message = setorController.incluir(setor);
 		Integer result = (int)setorRepository.count();
-		assertThat(result).isEqualTo(expected);
+		if(setorRepository.findByNome(setor.getNome()).isEmpty()){
+			assertThat(result).isEqualTo(expected);
+		}else{
+			System.out.println(Message.getMensagens());
+		}
 	}
 	
 	@Test

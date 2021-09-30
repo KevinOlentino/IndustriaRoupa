@@ -58,8 +58,6 @@ public class RoupaTecidoControllerTest {
         roupaTecido.setIdTecido(9);
         roupaTecido.setIdRoupa(3);
 
-        System.out.println(roupaTecido.getIdRoupaTecido());
-
         roupaTecidoController.alterar(roupaTecido);
         RoupaTecido roupaTest = roupaTecidoController.Consultar(3);
 
