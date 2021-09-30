@@ -1,6 +1,5 @@
 package com.industria.roupa;
 
-import com.industria.roupa.controller.ViewQuantidadeTecidoController;
 import com.industria.roupa.controller.ViewQuantidadeVendasSetorController;
 import com.industria.roupa.repositories.ViewQuantidadeVendasSetorRepository;
 import org.junit.jupiter.api.Test;
