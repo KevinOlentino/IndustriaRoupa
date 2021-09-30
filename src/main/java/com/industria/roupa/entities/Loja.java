@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -19,7 +18,6 @@ public class Loja {
     private int idloja;
 	
 	@Column(name = "nome")
-    @Max(50)
     @Pattern(regexp = "[A-z ]{5,50}")
     private String Nome;
     
