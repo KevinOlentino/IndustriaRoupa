@@ -3,12 +3,14 @@ package com.industria.roupa;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.industria.roupa.controller.FuncaoController;
 import com.industria.roupa.entities.Funcao;
+import com.industria.roupa.entities.RoupaTecido;
 import com.industria.roupa.repositories.FuncaoRepository;
 
 @SpringBootTest
@@ -59,7 +61,14 @@ public class FuncaoControllerTest {
 
 	        assertThat(funcao.getIdFuncao()).isEqualTo(funcaoTest.getIdFuncao());
 	        
-	    
+	    }
+	 	
+	 	 @Test
+	     void ConsultarTest(){
+	         Integer Expected = 5;
+	         Funcao funcao = funcaoController.Consultar(5);
 
-	 	}
+	         assertThat(funcao.getIdFuncao()).isEqualTo(Expected);
+
+	     }
 }
