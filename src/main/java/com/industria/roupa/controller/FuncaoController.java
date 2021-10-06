@@ -16,7 +16,8 @@ import com.industria.roupa.repositories.FuncaoRepository;
 
 @RestController
 @RequestMapping("funcao")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin
+
 public class FuncaoController {
 
 

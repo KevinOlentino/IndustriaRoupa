@@ -18,7 +18,7 @@ import javax.validation.ConstraintViolationException;
 
 @RestController
 @RequestMapping("venda")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin
 public class VendaController {
 	
 	@Autowired
